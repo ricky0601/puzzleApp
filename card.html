@@ -112,6 +112,13 @@ $(document).ready(function() {
             $('.card_desc').text('오이도는 시흥시에 위치해 각종 어패류가 많이 나며, 각 시기의 유적이 여러 차례 걸쳐 발굴되어 국가사적 441호로 지정된 중요 유적지이다. 생명의 나무는 오이도 황새바위길에 있는 일몰·야간 명소이다. 옛 오이도가 가진 역사와 생명, 사람의 흔적을 되살리고 후대에 길이 알리기 위해 제작되었다. ');
         }
         $('#text').text(saveName);
+
+        $("#img_front").on('load', function(){
+            var h = $("#img_front").height();//height 구하기
+            $('.flip-card').css('height', h);
+
+            $('.backBtn').css('top',h+20);
+        })
     } else {
         $('#text').text('저장된 이름이 없습니다.');
     }
