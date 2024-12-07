@@ -148,16 +148,29 @@ $(document).ready(function() {
         $('#infoT').text('카드를 뒤집어서 정보를 확인하세요!');
     });
 
-    $('.backBtn').click(function(){
-        $('.flip-card-inner').css('transform','rotateY(180deg)');
+    $('.backBtn').on('click touchstart', function(event) {
+        event.preventDefault();
+        alert('Button clicked!', event);
+        $('.flip-card-inner').css('transform', 'rotateY(180deg)');
         $('.backBtn').text('퍼즐 맞추기');
-        $('#infoT').text(infoName+' 정보 카드');
+        $('#infoT').text(infoName + ' 정보 카드');
 
-        let array = JSON.parse(localStorage.getItem("array"));
-        if(!array.includes(saveName)){
-            $('.backBtn').attr('onclick','location.href="puzzle.html"');
-        }else{
-            $('.backBtn').attr('onclick','location.href="puzzle.html"');
+        let array = localStorage.getItem("array");
+        if (array) {
+            try {
+                array = JSON.parse(array);
+            } catch (e) {
+                alert("Failed to parse localStorage array:", e);
+                array = [];
+            }
+        } else {
+            array = [];
+        }
+
+        if (!array.includes(saveName)) {
+            $('.backBtn').attr('onclick', 'location.href="puzzle.html"');
+        } else {
+            $('.backBtn').attr('onclick', 'location.href="puzzle.html"');
         }
     });
 });
