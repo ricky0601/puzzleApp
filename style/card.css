@@ -1,0 +1,132 @@
+#wrap_card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: hidden;
+}
+
+.flip-card {
+    width: 320px;
+    height: 575px;
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+        margin-top: 60px;
+        font-size: 20px;
+    }
+
+    #card_thumb{
+        max-height: 152px;
+        max-width: 223px;
+        border-radius: 20px;
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+
+    h2, p{
+        font-size: 12px;
+    }
+    .card_line{
+        display: flex;
+
+        p{
+            margin-left: 5px;
+        }
+    }
+
+    .card_desc{
+        font-size: 12px;
+        margin-top: 10px;
+        text-align: left;
+        width: 223px;
+        height: 140px;
+    }
+}
+
+.flip-card-back {
+    color: white;
+    transform: rotateY(180deg);
+}
+.click_area{
+    color: #3E3C2F;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#wrap_card .frontBtn{
+    width: 255px;
+    height: 50px;
+    border: 0;
+    border-radius: 30px;
+    background-color: #A58250;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    bottom: -60px;
+}
+
+#wrap_card .backBtn{
+    color: #424242;
+    width: 320px;
+    height: 50px;
+    border: solid 1px #4C77FF;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 500;
+    position: absolute;
+    bottom: -82px;
+}
+
+#img_front{
+    position: absolute;
+    left: 0;
+    z-index: -1;
+}
+
+#img_back{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}

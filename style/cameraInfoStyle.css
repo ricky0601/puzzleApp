@@ -1,0 +1,43 @@
+#cameraInfo #wrap_cameraInfo{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#cameraInfo .wrap_img{
+    position: relative;
+    width: 390px;
+    height: 844px;
+
+    #img_name{
+        position: absolute;
+        right: 0;
+        bottom: 20%;
+    }
+}
+
+#cameraInfo #camera_button{
+    width: 60px;
+    height: 60px;
+    border: 0;
+    border-radius: 100%;
+    position: absolute;
+    animation: scale 1.5s ease infinite;
+}
+
+@keyframes scale {
+    0% {
+        scale: 1;
+    }
+    50% {
+        scale: 1.2;
+    }
+    100% {
+        scale: 1;
+    }
+}

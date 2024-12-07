@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오이도 랜드마크로 맞춰보는 퍼즐</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/puzzle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="wrap_puzzle">
+        <span id="puzzle_title"></span>
+        <div class="puzzle_back">
+            <div class="puzzle_area">
+                <img src="assets/puzzle00.png" alt="" width="262px" height="242px">
+                <img id="puzzle1" alt="">
+                <img id="puzzle2"  alt="">
+                <img id="puzzle3"  alt="">
+                <img id="puzzle4"  alt="">
+                <img id="puzzle5"  alt="">
+            </div>
+            <div class="util_area">
+                <span id="count_text"></span>
+                <button class="nav_button" onclick="location.href='index.html'">메인 화면</button>
+            </div>
+        </div>
+        <div class="puzzle_count">
+            <p id="count_info"></p>
+        </div>
+    </div>
+</body>
+<script>
+$(document).ready(function() {
+    let saveName = localStorage.getItem('name');
+    let array = JSON.parse(localStorage.getItem("array"));
+    if(!array.includes(saveName)){
+        let count = Number(localStorage.getItem('count'))+1;
+        localStorage.setItem('count', count+'');
+        array.push(saveName);
+        localStorage.setItem("array", JSON.stringify(array));
+    }else{
+        alert('이미 맞춘 퍼즐입니다.');
+    }
+    let count = Number(localStorage.getItem('count'));
+    if(count != null){
+        if(count === 1){
+            $('#puzzle1').attr('src','assets/puzzle01.png');
+            $('#puzzle_title').html('현재까지 <strong>'+count+'개</strong>의 퍼즐을 <br>맞추셨습니다!');
+            $('#count_info').html('앞으로 <strong>'+ (5-count) +'개</strong> 남았습니다.');
+        }
+        if(count === 2){
+            $('#puzzle1').attr('src','assets/puzzle01.png');
+            $('#puzzle2').attr('src','assets/puzzle02.png');
+            $('#puzzle_title').html('현재까지 <strong>'+count+'개</strong>의 퍼즐을 <br>맞추셨습니다!');
+            $('#count_info').html('앞으로 <strong>'+ (5-count) +'개</strong> 남았습니다.');
+        }
+        if(count === 3){
+            $('#puzzle1').attr('src','assets/puzzle01.png');
+            $('#puzzle2').attr('src','assets/puzzle02.png');
+            $('#puzzle3').attr('src','assets/puzzle03.png');
+            $('#puzzle_title').html('현재까지 <strong>'+count+'개</strong>의 퍼즐을 <br>맞추셨습니다!');
+            $('#count_info').html('앞으로 <strong>'+ (5-count) +'개</strong> 남았습니다.');
+        }
+        if(count === 4){
+            $('#puzzle1').attr('src','assets/puzzle01.png');
+            $('#puzzle2').attr('src','assets/puzzle02.png');
+            $('#puzzle3').attr('src','assets/puzzle03.png');
+            $('#puzzle4').attr('src','assets/puzzle04.png');
+            $('#puzzle_title').html('현재까지 <strong>'+count+'개</strong>의 퍼즐을 <br>맞추셨습니다!');
+            $('#count_info').html('앞으로 <strong>'+ (5-count) +'개</strong> 남았습니다.');
+        }
+        if(count === 5){
+            $('#puzzle1').attr('src','assets/puzzle01.png');
+            $('#puzzle2').attr('src','assets/puzzle02.png');
+            $('#puzzle3').attr('src','assets/puzzle03.png');
+            $('#puzzle4').attr('src','assets/puzzle04.png');
+            $('#puzzle5').attr('src','assets/puzzle05.png');
+            $('#puzzle_title').html('퍼즐을 완성했습니다!');
+            $('#count_info').text('축하드립니다!');
+        }
+        $('#count_text').html('<strong>현재 맞춘 퍼즐 개수</strong><br>'+count+'개');
+    }else{
+        $('#puzzle_title').text('현재 맞춘 퍼즐이 없습니다!');
+    }
+});
+</script>
+</html>

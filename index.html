@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오이도 랜드마크로 맞춰보는 퍼즐</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/topSheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrap_area">
+        <div id="left_area">
+            <div id="anime_area">
+                <h2>환영합니다!</h2>
+                <p>
+                    오이도의 랜드마크를
+                    <br>구경하고 퍼즐을 맞춰보세요.
+                </p>
+            </div>
+            <img src="assets/main_map.png" alt="" class="home_image">
+            <button class="slide_button">시작하기</button>
+        </div>
+        <div id="right_area">
+            <div id="wrap_top_sheet">
+                <div class="top_sheet_text">
+                    <p><strong>퍼즐</strong>을 완성하고
+                    <br>귀여운 <strong>선물</strong> 받아가세요! </p>
+                    <button>퍼즐 현황 보기</button>
+                </div>
+            </div>
+            <div class="wrap_wrap_title">
+                <div class="wrap_title">
+                    <p id="animate_text">
+                        <strong style="color: #4C77FF">오이도</strong>에서 구경하고 싶은
+                        <br><strong style="color: #4C77FF">랜드마크</strong>를 눌러주세요.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="wrap_list">
+                <ul>
+                    <li class="light_area">
+                        <div class="img_wrap">
+                            <img src="assets/lighthouse_icon.png" alt="" width="96px" height="103px">
+                        </div>
+                        <div class="text_area">
+                            <div class="landmark_name">
+                                <h3>빨강등대</h3><span>Red LightHouse</span>
+                            </div>
+                            <div class="landmark_place">
+                                <span>경기 시흥시 오이도로 170</span>
+                            </div>
+                            <div class="landmark_point">
+                                <div class ="star_rating">
+                                    ​<span class="star on" value="1"></span>
+                                    ​​<span class="star" value="2"></span>
+                                    ​​<span class="star" value="3"></span>
+                                    ​​<span class="star" value="4"></span>
+                                    ​​<span class="star" value="5"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="oasis_area">
+                        <div class="img_wrap">
+                            <img src="assets/oasis_icon.png" alt="" width="103px">
+                        </div>
+                        <div class="text_area">
+                            <div class="landmark_name">
+                                <h3>오아시스</h3><span>Oasis</span>
+                            </div>
+                            <div class="landmark_place">
+                                <span>경기 시흥시 정왕동 2064</span>
+                            </div>
+                            <div class="landmark_point">
+                                <div class ="star_rating">
+                                    ​<span class="star on" value="1"></span>
+                                    ​​<span class="star" value="2"></span>
+                                    ​​<span class="star" value="3"></span>
+                                    ​​<span class="star" value="4"></span>
+                                    ​​<span class="star" value="5"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="tree_area">
+                        <div class="img_wrap">
+                            <img src="assets/tree_icon.png" alt="" width="67px" height="67px">
+                        </div>
+                        <div class="text_area">
+                            <div class="landmark_name">
+                                <h3>생명의 나무</h3><span>Tree of Life</span>
+                            </div>
+                            <div class="landmark_place">
+                                <span>경기 시흥시 오이도로 170</span>
+                            </div>
+                            <div class="landmark_point">
+                                <div class ="star_rating">
+                                    ​<span class="star on" value="1"></span>
+                                    ​​<span class="star" value="2"></span>
+                                    ​​<span class="star" value="3"></span>
+                                    ​​<span class="star" value="4"></span>
+                                    ​​<span class="star" value="5"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="park_area">
+                        <div class="img_wrap">
+                            <img src="assets/park_icon.png" alt="" width="89px">
+                        </div>
+                        <div class="text_area">
+                            <div class="landmark_name">
+                                <h3>선사유적공원</h3><span>Historic Park</span>
+                            </div>
+                            <div class="landmark_place">
+                                <span>경기 시흥시 서해안로 81-30</span>
+                            </div>
+                            <div class="landmark_point">
+                                <div class ="star_rating">
+                                    ​<span class="star on" value="1"></span>
+                                    ​​<span class="star" value="2"></span>
+                                    ​​<span class="star" value="3"></span>
+                                    ​​<span class="star" value="4"></span>
+                                    ​​<span class="star" value="5"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="museum_area">
+                        <div class="img_wrap">
+                            <img src="assets/museum_icon.png" alt="" width="86px">
+                        </div>
+                        <div class="text_area">
+                            <div class="landmark_name">
+                                <h3>오이도 박물관</h3><span>Oido Museum</span>
+                            </div>
+                            <div class="landmark_place">
+                                <span>경기 시흥시 오이도로 332</span>
+                            </div>
+                            <div class="landmark_point">
+                                <div class ="star_rating">
+                                    ​<span class="star on" value="1"></span>
+                                    ​​<span class="star" value="2"></span>
+                                    ​​<span class="star" value="3"></span>
+                                    ​​<span class="star" value="4"></span>
+                                    ​​<span class="star" value="5"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button id="submitButton" class="submitButton" onclick="submit();">선택하기</button>
+        </div>
+    </div>
+</body>
+<script>
+    function submit(){
+        if($('#submitButton').hasClass('button_selected')){
+            location.href='cameraInfo.html';
+        }else{
+            alert('랜드마크를 눌러주세요!');
+        }
+    }
+    let count = localStorage.getItem('count');
+    if(count == null){
+        count = '0';
+    }
+    localStorage.setItem('count',count);
+
+    let array = JSON.parse(localStorage.getItem('array'));
+    if(array == null){
+        array = [];
+    }
+    localStorage.setItem("array", JSON.stringify(array));
+
+    $('#anime_area').animate({'opacity': 1}, 800);
+
+    $('.slide_button').click(function(){    //버튼 클릭시 슬라이드 효과
+        $('.wrap_area').css('transform', 'translateX(-50%)');
+    });
+
+    $('.light_area').click(function(){
+        localStorage.setItem('name', 'lighthouse');  // js localStorage 사용
+        $('.light_area').addClass('li_selected');
+        $('.museum_area').removeClass('li_selected');
+        $('.oasis_area').removeClass('li_selected');
+        $('.park_area').removeClass('li_selected');
+        $('.tree_area').removeClass('li_selected');
+        $('.submitButton').addClass('button_selected');
+    });
+
+    $('.museum_area').click(function(){
+        localStorage.setItem('name', 'museum');
+        $('.light_area').removeClass('li_selected');
+        $('.museum_area').addClass('li_selected');
+        $('.oasis_area').removeClass('li_selected');
+        $('.park_area').removeClass('li_selected');
+        $('.tree_area').removeClass('li_selected');
+        $('.submitButton').addClass('button_selected');
+    });
+
+    $('.oasis_area').click(function(){
+        localStorage.setItem('name', 'oasis');
+        $('.light_area').removeClass('li_selected');
+        $('.museum_area').removeClass('li_selected');
+        $('.oasis_area').addClass('li_selected');
+        $('.park_area').removeClass('li_selected');
+        $('.tree_area').removeClass('li_selected');
+        $('.submitButton').addClass('button_selected');
+    });
+
+    $('.park_area').click(function(){
+        localStorage.setItem('name', 'park');
+        $('.light_area').removeClass('li_selected');
+        $('.museum_area').removeClass('li_selected');
+        $('.oasis_area').removeClass('li_selected');
+        $('.park_area').addClass('li_selected');
+        $('.tree_area').removeClass('li_selected');
+        $('.submitButton').addClass('button_selected');
+    });
+
+    $('.tree_area').click(function(){
+        localStorage.setItem('name', 'tree');
+        $('.light_area').removeClass('li_selected');
+        $('.museum_area').removeClass('li_selected');
+        $('.oasis_area').removeClass('li_selected');
+        $('.park_area').removeClass('li_selected');
+        $('.tree_area').addClass('li_selected');
+        $('.submitButton').addClass('button_selected');
+    });
+    $('.star_rating > .star').click(function() {
+        $(this).parent().children('span').removeClass('on');
+        $(this).addClass('on').prevAll('span').addClass('on');
+    })
+</script>
+</html>

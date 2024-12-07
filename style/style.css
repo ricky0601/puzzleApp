@@ -1,0 +1,244 @@
+.wrap_area{
+    display: flex;
+    flex-direction: row;
+    width: 200vw;
+    height: 100%;
+    transition: transform 0.5s ease;
+    overflow: hidden;
+    position: fixed;
+
+    h2{
+        margin-bottom: 12px;
+    }
+
+    #anime_area{
+        text-align: left;
+        width: 80vw;
+        color: #FFFFFF;
+    }
+}
+
+.wrap_area #left_area, .wrap_area #right_area{
+    width: 100vw;
+}
+
+.wrap_area #left_area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: #4C77FF;
+    height: 100vh;
+}
+
+.wrap_area #right_area{
+    background-color: #F7F7F7;
+    position: relative;
+    overflow: scroll;
+    padding-bottom: 43px;
+    text-align: center;
+    align-items: center;
+    height: 100%;
+}
+
+.wrap_area .wrap_wrap_title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.wrap_area .wrap_title{
+    text-align: left;
+    width: 80vw;
+}
+
+.wrap_area #right_area h1{
+    text-align: left;
+    font-family: 'SangSangRock';
+    font-size: 40px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.wrap_area .home_image{
+    margin-top: 8vh;
+}
+
+.wrap_area .wrap_image{
+    position: relative;
+    margin-top: 28px;
+
+    .main_icon{
+        position: absolute;
+    }
+}
+
+#animate_text {
+    font-size: 20px;
+    display: inline-block;
+    position: relative;
+    animation: bounce 1.5s ease infinite;
+}
+
+@keyframes bounce {
+    0% {
+        top: 0;
+    }
+    20% {
+        top: -10px;
+    }
+    40% {
+        top: 0;
+    }
+    60% {
+        top: -5px;
+    }
+    80% {
+        top: 0;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+#right_area .wrap_list ul{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+}
+
+#right_area .wrap_list ul li{
+    width: 80vw;
+    height: 110px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    border: solid 2px #4c77ff00;
+    transition: all 0.3s ease-in-out;
+}
+
+#right_area li .img_wrap{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    width: calc(100% - 70%);
+    justify-content: center;
+}
+
+#right_area li .text_area{
+    width: 70%;
+}
+
+#right_area .submitButton{
+    width: 80vw;
+    height: 52px;
+    background-color: #EAEAEA;
+    border: none;
+    border-radius: 10px;
+    color: #C6C6C6;
+    font-weight: 500;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 43px;
+}
+
+#right_area .li_selected{
+    border: solid 2px #4C77FF !important;
+}
+
+#right_area .button_selected{
+    background-color: #4B76FF;
+    color: #FFFFFF;
+}
+
+#right_area .text_area .landmark_name{
+    display: flex;
+    align-items: center;
+    margin-top: 22px;
+    margin-bottom: 5px;
+
+    h3{
+        font-size: 16px;
+    }
+
+    span{
+        color: #BEBEBE;
+        font-size: 12px;
+        margin-left: 8px;
+    }
+}
+
+#right_area .text_area .landmark_place{
+    text-align: left;
+    span{
+        font-size: 10px;
+    }
+}
+
+#right_area .text_area .landmark_point{
+    text-align: left;
+
+    .star_rating {
+        width: 100%; 
+        box-sizing: border-box; 
+        display: inline-flex; 
+        float: left;
+        flex-direction: row; 
+        justify-content: flex-start;
+    }
+    .star_rating .star {
+        width: 21px; 
+        height: 21px; 
+        display: inline-block; 
+        background: url('../assets/starN.png') no-repeat; 
+        background-size: 100%; 
+        box-sizing: border-box; 
+        margin-right: 2px;
+    }
+    .star_rating .star.on {
+        width: 21px; 
+        height: 21px;
+        display: inline-block; 
+        background: url('../assets/star.png') no-repeat;
+        background-size: 100%; 
+        box-sizing: border-box; 
+        margin-right: 2px;
+    }
+}
+
+.wrap_area .slide_button{
+    margin-top: 80px;
+    color: #424242;
+    font-size: 18px;
+    font-weight: 500;
+    width: 80vw;
+    height: 50px;
+    border-radius: 30px;
+    border: 0;
+    background-color: white;
+}
+
+.wrap_camera{
+    display: flex;
+    justify-content: center;
+
+    button{
+        z-index: 1;
+        position: absolute;
+        bottom: 5vh;
+        width: 62px;
+        height: 62px;
+        border-radius: 100%;
+        border: 0;
+        background: #d9d9d9;
+        /* cursor: pointer; */
+
+        img{
+            width: 40px;
+        }
+    }
+}

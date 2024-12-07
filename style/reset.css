@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'SangSangRock';
+    src: url('https://cdn.jsdelivr.net/gh/fontbee/font@main/Sangsangfont/SangSangRockOTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    margin: 0;
+    background-color: #F7F7F7;
+    /* overflow: hidden; */
+    font-family: "Nanum Gothic", serif;
+    color: #424242;
+}
+
+h1, p, h2, ul, li, h3{
+    margin: 0;
+    padding: 0;
+}
+
+ul, li{
+    list-style: none;
+}

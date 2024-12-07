@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오이도 랜드마크로 맞춰보는 퍼즐</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/cameraInfoStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body id="cameraInfo">
+    <div id="wrap_cameraInfo">
+        <p style="position: absolute; top: 16vh;">
+            <strong>카메라 버튼</strong>을 눌러서
+            <br>"<strong><span id="text_name"></span></strong>" 를 찍어주세요!
+            <br>해당 정보를 확인할 수 있습니다~!
+        </p>
+        <div class="wrap_img">
+            <img id="img_name" alt="">
+        </div>
+        <button id="camera_button">
+            <img src="assets/test_camera.png" alt="" style="width: 38.71px;">
+        </button>
+    </div>
+</body>
+<script>
+    let saveName = localStorage.getItem('name');    //localStorage 'name'에 저장된 값 가져오기
+    if (saveName) {
+        if(saveName === 'lighthouse'){ 
+            $('#text_name').text('빨강등대');
+            $('#img_name').attr('src', 'assets/Group 7.png');
+        }else if(saveName === 'oasis'){
+            $('#text_name').text('오아시스');
+            $('#img_name').attr('src', 'assets/Group 8.png');
+        }else if(saveName === 'park'){
+            $('#text_name').text('선사유적공원');
+            $('#img_name').attr('src', 'assets/Group 9.png');
+        }else if(saveName === 'museum'){
+            $('#text_name').text('오이도 박물관');
+            $('#img_name').attr('src', 'assets/Group 10.png');
+        }else if(saveName === 'tree'){
+            $('#text_name').text('생명의 나무');
+            $('#img_name').attr('src', 'assets/Group 11.png');
+        }
+        $('#text').text(saveName);
+    } else {
+        $('#text').text('저장된 이름이 없습니다.');
+    }
+
+    $('#camera_button').click(function(){
+        location.href = 'video.html';
+    });
+</script>
+</html>

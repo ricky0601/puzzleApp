@@ -1,0 +1,34 @@
+
+#video_background{
+    background-color: #2F2F2F;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    overflow: hidden;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#videoElement{
+	width: 100%;
+	height: 375px;
+	background-color: white;
+}
+
+#video_background #video_button{
+    width: 255px;
+    height: 50px;
+    background-color: #FFFFFF;
+    color: #2C2C2C;
+    border: 0;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#video_background #video_button{
+    position: absolute;
+    bottom: 63px;
+}
