@@ -18,6 +18,10 @@
     width: 260px;
     height: 240px;
     position: relative;
+
+    img{
+        width: 100%;
+    }
 }
 
 #puzzle1{

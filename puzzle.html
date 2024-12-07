@@ -16,7 +16,7 @@
         <span id="puzzle_title"></span>
         <div class="puzzle_back">
             <div class="puzzle_area">
-                <img id="puzzle" alt="">
+                <img id="puzzle" alt="" src="assets/puzzle00.png">
             </div>
             <div class="util_area">
                 <span id="count_text"></span>
@@ -32,6 +32,11 @@
 $(document).ready(function() {
     let saveName = localStorage.getItem('name');
     let array = JSON.parse(localStorage.getItem("array"));
+    if(array.length === 0 ){
+        $('#puzzle').attr('src','assets/puzzle00.png');
+        $('#puzzle_title').html('현재까지 <strong>'+0+'개</strong>의 퍼즐을 <br>맞추셨습니다!');
+        $('#count_info').html('퍼즐을 완성해주세요!');
+    }
     if(!array.includes(saveName)){
         let count = Number(localStorage.getItem('count'))+1;
         localStorage.setItem('count', count+'');

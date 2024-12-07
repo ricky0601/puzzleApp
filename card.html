@@ -148,7 +148,7 @@ $(document).ready(function() {
         $('#infoT').text('카드를 뒤집어서 정보를 확인하세요!');
     });
 
-    $('.backBtn').on('click touchstart',function(){
+    $('.backBtn').on('click',function(){
         $('.flip-card-inner').css('transform','rotateY(180deg)');
         $('.backBtn').text('퍼즐 맞추기');
         $('#infoT').text(infoName+' 정보 카드');

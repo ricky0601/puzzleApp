@@ -30,7 +30,7 @@
                 <div class="top_sheet_text">
                     <p><strong>퍼즐</strong>을 완성하고
                     <br>귀여운 <strong>선물</strong> 받아가세요! </p>
-                    <button>퍼즐 현황 보기</button>
+                    <button onclick="location.href='puzzle.html'">퍼즐 현황 보기</button>
                 </div>
             </div>
             <div class="wrap_wrap_title">
@@ -168,6 +168,7 @@
             alert('랜드마크를 눌러주세요!');
         }
     }
+    
     let count = localStorage.getItem('count');
     if(count == null){
         count = '0';
