@@ -13,6 +13,9 @@
 </head>
 <body>
     <div id="wrap_card">
+        <div id="wrap_info">
+            <p id="infoT">카드를 뒤집어서 정보를 확인하세요!</p>
+        </div>
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-back">
@@ -50,15 +53,17 @@
                     <img id="img_back" width="100%">
                 </div>
             </div>
-            <button class="backBtn">정보 확인하기</button>
+            <button class="backBtn">카드 뒤집기</button>
         </div>
     </div>
 </body>
 <script>
 $(document).ready(function() {
     let saveName = localStorage.getItem('name');    //localStorage 'name'에 저장된 값 가져오기
+    let infoName;
     if (saveName) {
         if(saveName === 'lighthouse'){ 
+            infoName = '빨강등대';
             $('#text_name').text('빨강등대');
             $('#img_front').attr('src', 'assets/card_front.png');
             $('#img_back').attr('src', 'assets/light_back.png');
@@ -71,6 +76,7 @@ $(document).ready(function() {
             $('#card_car').text('오이도 노상 공영 주차장');
             $('.card_desc').text('빨강등대 앞에는 포토존이 조성되어 있고, 1층 전시관에서는 시흥의 문화, 관광, 역사 등 다양한 정보를 접할 수 있으며, 오이도 등대 공방에서 체험키트를 구입 후 비누, 썬캐쳐 등 바다 관련 DIY 제품을 만드는 체험을 할 수 있다. 전망대에서는 시화공단, 배곧 신도시 등의 모습을 볼 수 있다. ');
         }else if(saveName === 'oasis'){
+            infoName = '오아시스';
             $('#text_name').text('오아시스');
             $('#img_front').attr('src', 'assets/card_front.png');
             $('#img_back').attr('src', 'assets/oasis_back.png');
@@ -83,6 +89,7 @@ $(document).ready(function() {
             $('#card_car').text('오이도 노상 공영 주차장');
             $('.card_desc').text('오이도에 문화의 생명을 주는 공간이라는 의미를 담고 있는 오아시스는 퇴역한 경찰 정비정을 이용한 유휴공간이다. 매주 월요일은 휴무이며, 기상 악화시 체험관만 개방한다. 1층의 전시관은 통유리 형태로 안이 보이게 개조되어 사진 전시관으로 활용되며, 갑판으로 올라오면 군함의 기능을 볼 수 있다.');
         }else if(saveName === 'park'){
+            infoName = '선사유적공원';
             $('#text_name').text('선사유적공원');
             $('#img_front').attr('src', 'assets/card_front.png');
             $('#img_back').attr('src', 'assets/park_back.png');
@@ -95,6 +102,7 @@ $(document).ready(function() {
             $('#card_car').text('시흥시 서해안로 81-3');
             $('.card_desc').text('오이도 선사유적은 우리나라 중부 서해안 지역의 대표적인 패총(조개무덤)으로서, 우리나라 선사시대 해안 생활상과 문화를 연구하는데 귀중한 자료를 제공해 준다. 매주 월요일, 매년 1월 1일, 설 및 추석 당일은 휴무이며, 선사체험마을과 움집 체허이 가능한 야영마을, 발굴터, 사냥터 등이 조성되어 있다.');
         }else if(saveName === 'museum'){
+            infoName = '오이도 박물관';
             $('#text_name').text('오이도 박물관');
             $('#img_front').attr('src', 'assets/card_front.png');
             $('#img_back').attr('src', 'assets/museum_back.png');
@@ -107,6 +115,7 @@ $(document).ready(function() {
             $('#card_car').text('박물관 내 주차 가능');
             $('.card_desc').text('오이도는 서해안 최대 패총유적지이자 다양한 신석기시대 유물의 출토지로, 선사시대 해안생물문화유산으로서 보존가치를 인정받는 곳이다. 매주 월요일, 매년 1월 1일, 설 및 추석 당일은 휴무이며, 박물관에서는 보다 가깝게 시흥의 출토 유물들을 이해하고 선사시대 생활문화를 체험할 수 있다.');
         }else if(saveName === 'tree'){
+            infoName = '생명의 나무';
             $('#text_name').text('생명의 나무');
             $('#img_front').attr('src', 'assets/card_front.png');
             $('#img_back').attr('src', 'assets/tree_back.png');
@@ -123,9 +132,10 @@ $(document).ready(function() {
 
         $("#img_front").on('load', function(){
             var h = $("#img_front").height();//height 구하기
+            console.log(h);
             $('.flip-card').css('height', h);
 
-            $('.backBtn').css('top',h+20);
+            $('.backBtn').css('top',h+25);
         })
     } else {
         $('#text').text('저장된 이름이 없습니다.');
@@ -133,13 +143,15 @@ $(document).ready(function() {
 
     $('.click_area').click(function(){
         $('.flip-card-inner').css('transform','rotateY(0deg)');
-        $('.backBtn').text('정보 확인하기');
+        $('.backBtn').text('카드 뒤집기');
         $('.backBtn').removeAttr('onclick');
+        $('#infoT').text('카드를 뒤집어서 정보를 확인하세요!');
     });
 
     $('.backBtn').click(function(){
         $('.flip-card-inner').css('transform','rotateY(180deg)');
         $('.backBtn').text('퍼즐 맞추기');
+        $('#infoT').text(infoName+' 정보 카드');
 
         let array = JSON.parse(localStorage.getItem("array"));
         if(!array.includes(saveName)){
@@ -149,5 +161,22 @@ $(document).ready(function() {
         }
     });
 });
+// 전역 오류 처리 핸들러 등록
+window.onerror = function (message, source, lineno, colno, error) {
+    // 오류 정보를 alert로 표시
+    alert(`Error: ${message}\nSource: ${source}\nLine: ${lineno}, Column: ${colno}`);
+    
+    // 콘솔에도 오류 로그를 기록
+    console.error('Error caught:', {
+        message,
+        source,
+        lineno,
+        colno,
+        error,
+    });
+
+    // true를 반환하면 기본 오류 메시지를 무시
+    return false;
+};
 </script>
 </html>

@@ -1,15 +1,10 @@
-@font-face {
-    font-family: 'SangSangRock';
-    src: url('https://cdn.jsdelivr.net/gh/fontbee/font@main/Sangsangfont/SangSangRockOTF.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css");
 
 body{
     margin: 0;
     background-color: #F7F7F7;
     /* overflow: hidden; */
-    font-family: "Nanum Gothic", serif;
+    font-family: "Pretendard Variable", Pretendard;
     color: #424242;
 }
 

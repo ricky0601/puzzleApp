@@ -6,6 +6,16 @@
     height: 100%;
     position: fixed;
     overflow: hidden;
+    flex-direction: column;
+}
+
+#wrap_info{
+    margin-bottom: 15px;
+
+    #infoT{
+        font-size: 17px;
+        font-weight: 500;
+    }
 }
 
 .flip-card {
@@ -115,7 +125,7 @@
 }
 
 #wrap_card .backBtn{
-    color: #424242;
+    color: #4C77FF;
     width: 80vw;
     height: 50px;
     border: solid 1px #4C77FF;
