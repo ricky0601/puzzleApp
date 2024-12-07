@@ -30,6 +30,7 @@
 </body>
 <script>
 $(document).ready(function() {
+    let check = localStorage.getItem('post');
     let saveName = localStorage.getItem('name');
     let array = JSON.parse(localStorage.getItem("array"));
     if(array.length === 0 ){
@@ -42,8 +43,10 @@ $(document).ready(function() {
         localStorage.setItem('count', count+'');
         array.push(saveName);
         localStorage.setItem("array", JSON.stringify(array));
-    }else{
+    }if(check === 'true'){
         alert('이미 맞춘 퍼즐입니다.');
+    }else{
+        console.log('index에서 바로 옴');
     }
     let count = Number(localStorage.getItem('count'));
     if(count != null){

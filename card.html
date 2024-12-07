@@ -20,7 +20,7 @@
             <div class="flip-card-inner">
                 <div class="flip-card-back">
                     <div class="click_area">
-                        <img id="img_front" width="100%">
+                        <img id="img_front" width="100%" height="575px">
                         <h1 id="card_title"></h1>
                         <img id="card_thumb">
                         <div class="card_line">
@@ -50,15 +50,18 @@
                     </div>
                 </div>
                 <div class="flip-card-front">
-                    <img id="img_back" width="100%">
+                    <img id="img_back" width="100%" height="575px">
                 </div>
             </div>
-            <button class="backBtn">카드 뒤집기</button>
         </div>
+        <button class="backBtn">카드 뒤집기</button>
     </div>
 </body>
 <script>
+    // $('#wrap_card').css('height',$(window).height());
 $(document).ready(function() {
+    localStorage.setItem('post','true');    //card -> puzzle로 넘어가는 걸 확인 하기위함
+
     let saveName = localStorage.getItem('name');    //localStorage 'name'에 저장된 값 가져오기
     let infoName;
     if (saveName) {
