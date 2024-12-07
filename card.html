@@ -21,19 +21,27 @@
                         <h1 id="card_title"></h1>
                         <img id="card_thumb">
                         <div class="card_line">
-                            <h2>위치 :</h2> <p id="card_place"></p>
+                            <h2><p id="card_place"></p></h2> 
                         </div>
-                        <div class="card_line">
-                            <h2>안내전화 :</h2> <p id="card_phone"></p>
-                        </div>
-                        <div class="card_line">
-                            <h2>이용시간 :</h2> <p id="card_time"></p>
-                        </div>
-                        <div class="card_line">
-                            <h2>이용요금 :</h2> <p id="card_price"></p>
-                        </div>
-                        <div class="card_line">
-                            <h2>주차 :</h2> <p id="card_car"></p>
+                        <div class="card_info">
+                            <table>
+                                <tr>
+                                    <th>안내전화</th>
+                                    <td><p id="card_phone"></p></td>
+                                </tr>
+                                <tr>
+                                    <th>이용시간</th>
+                                    <td><p id="card_time"></p></td>
+                                </tr>
+                                <tr>
+                                    <th>이용요금</th>
+                                    <td><p id="card_price"></p></td>
+                                </tr>
+                                <tr>
+                                    <th><p>주차</p></th>
+                                    <td> <p id="card_car"></p></td>
+                                </tr>
+                            </table>
                         </div>
                         <div class="card_desc"></div>
                     </div>
@@ -52,7 +60,7 @@ $(document).ready(function() {
     if (saveName) {
         if(saveName === 'lighthouse'){ 
             $('#text_name').text('빨강등대');
-            $('#img_front').attr('src', 'assets/light_front.png');
+            $('#img_front').attr('src', 'assets/card_front.png');
             $('#img_back').attr('src', 'assets/light_back.png');
             $('#card_title').html('<strong>빨강 등대</strong>');
             $('#card_thumb').attr('src', 'assets/card_thumb_light.jpg');
@@ -64,46 +72,46 @@ $(document).ready(function() {
             $('.card_desc').text('빨강등대 앞에는 포토존이 조성되어 있고, 1층 전시관에서는 시흥의 문화, 관광, 역사 등 다양한 정보를 접할 수 있으며, 오이도 등대 공방에서 체험키트를 구입 후 비누, 썬캐쳐 등 바다 관련 DIY 제품을 만드는 체험을 할 수 있다. 전망대에서는 시화공단, 배곧 신도시 등의 모습을 볼 수 있다. ');
         }else if(saveName === 'oasis'){
             $('#text_name').text('오아시스');
-            $('#img_front').attr('src', 'assets/oasis_front.png');
+            $('#img_front').attr('src', 'assets/card_front.png');
             $('#img_back').attr('src', 'assets/oasis_back.png');
             $('#card_title').html('<strong>오아시스</strong>');
-            $('#card_thumb').attr('src', 'assets/card_thumb_light.jpg');
+            $('#card_thumb').attr('src', 'assets/oasis_thumb_light.jpg');
             $('#card_place').text('경기 시흥시 정왕동');
             $('#card_phone').text('031-319-2901~4');
-            $('#card_time').text('10:00 ~ 18:00');
+            $('#card_time').html('10:00 ~ 18:00 <span style="color:#C93131"> (매주 월 휴무)</span>');
             $('#card_price').text('무료');
             $('#card_car').text('오이도 노상 공영 주차장');
             $('.card_desc').text('오이도에 문화의 생명을 주는 공간이라는 의미를 담고 있는 오아시스는 퇴역한 경찰 정비정을 이용한 유휴공간이다. 매주 월요일은 휴무이며, 기상 악화시 체험관만 개방한다. 1층의 전시관은 통유리 형태로 안이 보이게 개조되어 사진 전시관으로 활용되며, 갑판으로 올라오면 군함의 기능을 볼 수 있다.');
         }else if(saveName === 'park'){
             $('#text_name').text('선사유적공원');
-            $('#img_front').attr('src', 'assets/park_front.png');
+            $('#img_front').attr('src', 'assets/card_front.png');
             $('#img_back').attr('src', 'assets/park_back.png');
             $('#card_title').html('<strong>선사유적공원</strong>');
-            $('#card_thumb').attr('src', 'assets/card_thumb_light.jpg');
+            $('#card_thumb').attr('src', 'assets/park_thumb_light.jpg');
             $('#card_place').text('경기 시흥시 서해안로 81-30');
             $('#card_phone').text('031-310-3460');
-            $('#card_time').text('10:00~17:00 (패총전시관)');
+            $('#card_time').html('10:00 ~ 17:00 <span style="color:#C93131"> (매주 월 휴무)</span>');
             $('#card_price').text('무료');
             $('#card_car').text('시흥시 서해안로 81-3');
             $('.card_desc').text('오이도 선사유적은 우리나라 중부 서해안 지역의 대표적인 패총(조개무덤)으로서, 우리나라 선사시대 해안 생활상과 문화를 연구하는데 귀중한 자료를 제공해 준다. 매주 월요일, 매년 1월 1일, 설 및 추석 당일은 휴무이며, 선사체험마을과 움집 체허이 가능한 야영마을, 발굴터, 사냥터 등이 조성되어 있다.');
         }else if(saveName === 'museum'){
             $('#text_name').text('오이도 박물관');
-            $('#img_front').attr('src', 'assets/museum_front.png');
+            $('#img_front').attr('src', 'assets/card_front.png');
             $('#img_back').attr('src', 'assets/museum_back.png');
             $('#card_title').html('<strong>오이도 박물관</strong>');
-            $('#card_thumb').attr('src', 'assets/card_thumb_light.jpg');
+            $('#card_thumb').attr('src', 'assets/museum_thumb_light.jpg');
             $('#card_place').text('경기 시흥시 오이도로 332');
             $('#card_phone').text('031-310-3052');
-            $('#card_time').text('10:00 ~ 18:00');
+            $('#card_time').html('10:00 ~ 18:00 <span style="color:#C93131"> (매주 월 휴무)</span>');
             $('#card_price').text('무료 (상선전시실)');
             $('#card_car').text('박물관 내 주차 가능');
             $('.card_desc').text('오이도는 서해안 최대 패총유적지이자 다양한 신석기시대 유물의 출토지로, 선사시대 해안생물문화유산으로서 보존가치를 인정받는 곳이다. 매주 월요일, 매년 1월 1일, 설 및 추석 당일은 휴무이며, 박물관에서는 보다 가깝게 시흥의 출토 유물들을 이해하고 선사시대 생활문화를 체험할 수 있다.');
         }else if(saveName === 'tree'){
             $('#text_name').text('생명의 나무');
-            $('#img_front').attr('src', 'assets/tree_front.png');
+            $('#img_front').attr('src', 'assets/card_front.png');
             $('#img_back').attr('src', 'assets/tree_back.png');
             $('#card_title').html('<strong>생명의 나무</strong>');
-            $('#card_thumb').attr('src', 'assets/card_thumb_light.jpg');
+            $('#card_thumb').attr('src', 'assets/tree_thumb_light.jpg');
             $('#card_place').text('경기 시흥시 오이도로 170');
             $('#card_phone').text('031-310-2901');
             $('#card_time').text('상시 개방');

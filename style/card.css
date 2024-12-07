@@ -54,10 +54,10 @@
     }
 
     #card_thumb{
-        max-height: 152px;
-        max-width: 223px;
+        max-width: 244px;
+        width: 244px;
         border-radius: 20px;
-        margin-top: 25px;
+        margin-top: 15px;
         margin-bottom: 20px;
     }
 
@@ -69,6 +69,7 @@
 
         p{
             margin-left: 5px;
+            font-weight: 500;
         }
     }
 
@@ -76,8 +77,9 @@
         font-size: 12px;
         margin-top: 10px;
         text-align: left;
-        width: 223px;
+        max-width: 244px;
         height: 140px;
+        line-height: 1.6;
     }
 }
 
@@ -138,4 +140,35 @@
     left: 0;
     right: 0;
     z-index: -1;
+}
+
+#wrap_card .card_info{
+    max-width: 244px;
+    width: 244px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+
+    table{
+        width: 100%;
+        border-radius: 5px;
+        border-collapse: collapse;
+        border-style: hidden;
+        box-shadow: 0 0 0 1px #4C77FF;
+
+        tr, th, td{
+            border: 1px solid #4C77FF;
+        }
+
+        th{
+            font-size: 12px;
+            padding-top: 5px;
+            width: 56px;
+        }
+        td{
+            text-align: left;
+            padding-left: 16px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    }
 }

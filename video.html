@@ -14,9 +14,31 @@
 <body id="video_background">
   <span id="text_name"></span>
 <!-- <button type="button" onclick="init()">Start</button> -->
-<div id="webcam-container"></div>
+  <div class="wrap_webcam" style="width: 100%; height: 60vh;">
+    <div id="webcam-container"></div>
+  </div>
+<div class="text_wrap">
+  <p style="color: white; text-align: center; margin-top: 15px;">
+    빨강등대에 카메라를 비춰보세요.
+    <br>카드 보여줄거임ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ
+  </p>
+</div>
 <div id="label-container" style="display: none;"></div>
-<button id="video_button" style="display: none;">카드 확인하기</button>
+<div id="video_button" style="display: none;">
+  <div class="submit_area">
+    <div class="text_area">
+      <p id="an_text"></p>
+    </div>
+    <div class="img_area">
+      <img src="assets/check.png" style="max-width: 151.43px;" alt="">
+    </div>
+    <div class="button_area">
+      <button class="submitB">정보 카드 확인하기</button>
+    </div>
+    <img src="assets/close_icon.png" class="closeB" alt="">
+  </div>
+</div>
+<!-- <button id="video_button" style="display: none;">카드 확인하기</button> -->
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 <script type="text/javascript">
@@ -63,7 +85,7 @@
 
         // convenience function to setup a webcam
         const flip = true; // whether to flip the webcam
-        webcam = new tmImage.Webcam(320, 463, flip); // width, height, flip
+        webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
         await webcam.setup({ facingMode: "environment" }); // use "user" to use front-cam on mobile phones
 
         // append elements to the DOM --> **before starting the webcam**
@@ -103,15 +125,30 @@
       if(prediction[i].className != 'NoN'){
         if((prediction[i].probability.toFixed(2))*100 > 70){
           $('#video_button').css('display','block');
+          if(saveName === 'lighthouse'){ 
+            $('#an_text').html('"빨강등대" 가 <br> 맞습니다!')
+          }else if(saveName === 'oasis'){
+            $('#an_text').html('"오아시스" 가 <br> 맞습니다!')
+          }else if(saveName === 'park'){
+            $('#an_text').html('"선사유적공원" 이 <br> 맞습니다!')
+          }else if(saveName === 'museum'){
+            $('#an_text').html('"오이도 박물관" 이 <br> 맞습니다!')
+          }else if(saveName === 'tree'){
+            $('#an_text').html('"생명의 나무" 가 <br> 맞습니다!')
+          }
         }else{
-          $('#video_button').css('display','none');
+          // $('#video_button').css('display','none');
         }
       }
     }
   }
   $(document).ready(init());
 
-  $('#video_button').click(function(){
+  $('.closeB').click(function(){
+    $('#video_button').css('display','none');
+  })
+
+  $('.submitB').click(function(){
     location.href = 'card.html';
   });
 </script>
