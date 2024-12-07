@@ -79,6 +79,11 @@
         // only now start the webcam --> **after video-object added to DOM and attributes are set**
         webcam.play();
         window.requestAnimationFrame(loop); // update canvas by loop-function
+        // append elements to the DOM
+        labelContainer = document.getElementById("label-container");
+        for (let i = 0; i < maxPredictions; i++) { // and class labels
+          labelContainer.appendChild(document.createElement("div"));
+        }
     }
 
   async function loop() {
