@@ -13,24 +13,31 @@
 </head>
 <body>
     <div id="wrap_puzzle">
-        <div id="wrap_title" style="height: 37px;">
-            <h2>퍼즐</h2>
-        </div>
-        <span id="puzzle_title"></span>
-        <div class="puzzle_back">
-            <div class="puzzle_area">
-                <img id="puzzle" alt="" src="assets/puzzle00.png">
+        <div id="puzzle_top">
+            <div id="wrap_title" style="height: 37px;">
+                <h2>퍼즐</h2>
             </div>
-            <div class="util_area">
-                <span id="count_text"></span>
-                <button class="nav_button">메인 화면</button>
+            <img src="assets/close_icon.png" alt="">
+        </div>
+        <div id="puzzle_main">
+            <span id="puzzle_title"></span>
+            <div class="puzzle_back">
+                <div class="puzzle_area">
+                    <img id="puzzle" alt="" src="assets/puzzle00.png">
+                </div>
+                <div class="util_area">
+                    <span id="count_text"></span>
+                    <button class="gift_button"><span id="gift_txt"><img src="assets/lock_icon.png" alt=""></span></button>
+                </div>
+            </div>
+            <div class="puzzle_count">
+                <p id="count_info"></p>
             </div>
         </div>
-        <div class="puzzle_count">
-            <p id="count_info"></p>
-        </div>
-        <div class="wrap_button">
-            <button onclick="location.href='index.html'">메인화면</button>
+        <div id="puzzle_button">
+            <div class="wrap_button">
+                <button onclick="location.href='index.html'">메인화면</button>
+            </div>
         </div>
     </div>
 </body>
@@ -81,7 +88,9 @@ $(document).ready(function() {
             $('#puzzle_title').html('현재까지 <strong>'+count+'개</strong>의 퍼즐을 <br>맞추셨습니다!');
             $('#count_info').html('어라? 뭔지 알 것 같아');
         }
-        if(count === 5){
+        if(count === 5){    //모든 퍼즐을 완성시켰을때
+            $('#gift_txt').text('선물함');
+            $('.gift_button').attr('onclick',('location.href="gift.html"'));
             $('#puzzle').attr('src','assets/puzzle05.png');
             $('#puzzle_title').html('퍼즐을 완성했습니다!');
             $('#count_info').text('축하드립니다!');
