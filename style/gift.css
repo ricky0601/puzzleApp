@@ -1,0 +1,121 @@
+#wrap_gift{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center; */
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    #wrap_top{
+        width: 100%;
+        height: 15%;
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #DCDCDC;
+
+        #wrap_title{
+            width: 100%;
+            text-align: center;
+
+            .fixed_area{
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    
+        img{
+            position: absolute;
+            right: 12vw;
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    #wrap_main{
+        padding-top: 10vh;
+        .wrap_box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 15px;
+
+            .gift_close{
+                position: relative;
+                max-width: 80vw;
+                animation: shake 0.2s linear infinite;
+            }
+
+            .gift_shine{
+                max-width: 80vw;
+                position: absolute;
+                opacity: 1;
+                scale: 0;
+                z-index: -1;
+                /* transition: all 3s linear; */
+            }
+            .threeS{
+                transition: all 3s linear;
+            }
+            .oneS{
+                transition: all 1s linear;
+            }
+            .gift_open{
+                display: none;
+                max-width: 80vw;
+                position: absolute;
+                opacity: 0;
+                z-index: -2;
+            }
+        }
+        .box_txt{
+            text-align: center;
+
+            span{
+                font-size: 20px;
+                animation: bounce 1.5s ease infinite;
+            }
+        }
+
+        .wrap_reward{
+            img{
+                max-width: 260px;
+                padding: 25px 30px;
+                background: #4C77FF;
+                border-radius: 20px;
+            }
+        }
+    }
+}
+
+@keyframes shake{
+    33%{
+        -webkit-transform: rotate(-2deg);
+    }
+    66%{
+        -webkit-transform: rotate(2deg);
+    }
+}
+@keyframes bounce {
+    0% {
+        top: 0;
+    }
+    20% {
+        top: -10px;
+    }
+    40% {
+        top: 0;
+    }
+    60% {
+        top: -5px;
+    }
+    80% {
+        top: 0;
+    }
+    100% {
+        top: 0;
+    }
+}

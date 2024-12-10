@@ -11,9 +11,11 @@
     position: relative;
     display: flex;
     align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #DCDCDC;
 
     #wrap_title{
-        height: 37px;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -25,14 +27,6 @@
         width: 16px;
         height: 16px;
     }
-}
-
-#wrap_title{
-    /* position: absolute; */
-    top: 8vh;
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px solid #DCDCDC;
 }
 
 #puzzle_main{
@@ -157,6 +151,5 @@
         border: 1px solid #4C77FF;
         border-radius: 10px;
         font-size: 4vw;
-        margin-top: 4vh;
     }
 }

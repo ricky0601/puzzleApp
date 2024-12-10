@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오이도 랜드마크로 맞춰보는 퍼즐</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/gift.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body style="overflow: hidden; position: relative;">
+    <div id="wrap_gift">
+        <div id="wrap_top">
+            <div id="wrap_title">
+                <div class="fixed_area">
+                    <h2>선물함</h2>
+                    <img src="assets/close_icon.png" alt="" class="closeA">
+                </div>
+            </div>
+        </div>
+        <div id="wrap_main">
+            <div class="wrap_box">
+                <img src="assets/gift_close.png" alt="" class="gift_close">
+                <img src="assets/gift_shine.png" alt="" class="gift_shine">
+                <img src="assets/gift_open.png" alt="" class="gift_open">
+                <div class="wrap_reward" style="display: none;">
+                    <img src="assets/reward01.png" alt="">
+                    <img src="assets/reward02.png" alt="">
+                    <img src="assets/reward03.png" alt="">
+                </div>
+            </div>
+            <div class="box_txt">
+                <span>상자를 눌러서 선물을 확인해보세요!</span>
+            </div>
+        </div>
+    </div>
+<script>
+    $(document).ready(function(){
+        $('.gift_close').click(function(){
+            $('.gift_shine').addClass('threeS');
+            $('.gift_close').css('z-index','-100');
+            $('.gift_shine').css('z-index','5');
+            $('.gift_shine').css('scale','5');
+
+            setTimeout(function(){
+                $('.gift_shine').removeClass('threeS');
+                $('.gift_shine').addClass('oneS');
+                $('.gift_close').css('opacity','0');
+                $('.gift_shine').css('scale','0');
+
+                setTimeout(function(){
+                    $('.gift_shine').css('opacity','0');
+                    $('.gift_open').css('display','block');
+                    $('.gift_open').css('opacity','1');
+                    $('.gift_open').css('z-index','1');
+                }, 500);
+            },3000);
+        });
+
+        $('.gift_open').click(function(){
+            $('.gift_open').css('display','none');
+            $('.wrap_reward').css('display','flex');
+            $('.wrap_reward').css('gap','20px');
+        });
+
+        $('.closeA').click(function(){  //뒤로가기 버튼
+            window.history.back();
+        })
+    });
+</script>
+</body>
+</html>

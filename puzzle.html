@@ -14,10 +14,10 @@
 <body>
     <div id="wrap_puzzle">
         <div id="puzzle_top">
-            <div id="wrap_title" style="height: 37px;">
+            <div id="wrap_title">
                 <h2>퍼즐</h2>
             </div>
-            <img src="assets/close_icon.png" alt="">
+            <img src="assets/close_icon.png" alt="" class="closeA">
         </div>
         <div id="puzzle_main">
             <span id="puzzle_title"></span>
@@ -99,6 +99,11 @@ $(document).ready(function() {
     }else{
         $('#puzzle_title').text('현재 맞춘 퍼즐이 없습니다!');
     }
+
+    $('.closeA').click(function(){  //뒤로가기 버튼
+        window.history.back();
+    })
+
 });
 </script>
 </html>
