@@ -9,11 +9,27 @@
     overflow: hidden;
 }
 
+#wrap_title{
+    position: absolute;
+    top: 8vh;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #DCDCDC;
+}
+
 #puzzle_title{
     text-align: center;
     font-size: 20px;
 }
 
+@media screen and (min-width: 375px) and (max-width: 389px){
+    #wrap_title{
+        top: 3vh;
+    }
+    #puzzle_title{
+        margin-top: 40px;
+    }
+}
 .puzzle_area{
     width: 260px;
     height: 240px;
@@ -100,4 +116,18 @@
 
 #count_info{
     font-size: 20px;
+}
+
+.wrap_button{
+    width: 80vw;
+
+    button{
+        width: 100%;
+        height: 52px;
+        background-color: #FFFFFF;
+        border: 1px solid #4C77FF;
+        border-radius: 10px;
+        font-size: 4vw;
+        margin-top: 4vh;
+    }
 }
