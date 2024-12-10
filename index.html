@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="wrap_area">
+    <div class="wrap_area" style="transform: translateX(-50%);">
         <div id="left_area">
             <div id="anime_area">
                 <h2>환영합니다!</h2>
@@ -183,8 +183,14 @@
 
     $('#anime_area').animate({'opacity': 1}, 800);
 
+    if(localStorage.getItem("first") === null){
+        $('.wrap_area').css('transform', 'translateX(0)');
+    }else{
+    }
+
     $('.slide_button').click(function(){    //버튼 클릭시 슬라이드 효과
         $('.wrap_area').css('transform', 'translateX(-50%)');
+        localStorage.setItem('first','N');
     });
 
     $('.light_area').click(function(){

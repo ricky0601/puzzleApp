@@ -13,6 +13,9 @@
 </head>
 <body>
     <div id="wrap_puzzle">
+        <div id="wrap_title" style="height: 37px;">
+            <h2>퍼즐</h2>
+        </div>
         <span id="puzzle_title"></span>
         <div class="puzzle_back">
             <div class="puzzle_area">
@@ -33,20 +36,25 @@ $(document).ready(function() {
     let check = localStorage.getItem('post');
     let saveName = localStorage.getItem('name');
     let array = JSON.parse(localStorage.getItem("array"));
+    if(check === 'true'){
+        if(array.includes(saveName)){   //card에서 넘어왔고 array에 진행중인 랜드마크가 이미 존재하면
+            alert('이미 맞춘 퍼즐입니다!');
+        }else{  //card에서 넘어왔고 array에 저장된 랜드마크가 없다면
+            let count = Number(localStorage.getItem('count'))+1;
+            localStorage.setItem('count', count+'');
+            array.push(saveName);
+            localStorage.setItem("array", JSON.stringify(array));
+        }
+    }else{
+        console.log('index에서 바로 옴');
+    }
+
+    localStorage.removeItem('post');    //post 데이터를 지움
+
     if(array.length === 0 ){
         $('#puzzle').attr('src','assets/puzzle00.png');
         $('#puzzle_title').html('현재까지 <strong>'+0+'개</strong>의 퍼즐을 <br>맞추셨습니다!');
         $('#count_info').html('퍼즐을 완성해주세요!');
-    }
-    if(!array.includes(saveName)){
-        let count = Number(localStorage.getItem('count'))+1;
-        localStorage.setItem('count', count+'');
-        array.push(saveName);
-        localStorage.setItem("array", JSON.stringify(array));
-    }if(check === 'true'){
-        alert('이미 맞춘 퍼즐입니다.');
-    }else{
-        console.log('index에서 바로 옴');
     }
     let count = Number(localStorage.getItem('count'));
     if(count != null){

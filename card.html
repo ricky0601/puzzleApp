@@ -58,10 +58,8 @@
     </div>
 </body>
 <script>
-    // $('#wrap_card').css('height',$(window).height());
 $(document).ready(function() {
     localStorage.setItem('post','true');    //card -> puzzle로 넘어가는 걸 확인 하기위함
-
     let saveName = localStorage.getItem('name');    //localStorage 'name'에 저장된 값 가져오기
     let infoName;
     if (saveName) {
@@ -133,47 +131,29 @@ $(document).ready(function() {
         }
         $('#text').text(saveName);
 
-        $("#img_front").on('load', function(){
+        $("#img_front").on('load', function(){  //이미지 로딩이 완료되면 이미지 사이즈에 맞게 반응형 디자인되게끔
             var h = $("#img_front").height();//height 구하기
             console.log(h);
             $('.flip-card').css('height', h);
-
             $('.backBtn').css('top',h+25);
         })
     } else {
         $('#text').text('저장된 이름이 없습니다.');
     }
 
-    $('.click_area').click(function(){
+    $('.click_area').click(function(){  //.click_area를 클릭하면 카드 뒤집기
         $('.flip-card-inner').css('transform','rotateY(0deg)');
         $('.backBtn').text('카드 뒤집기');
         $('.backBtn').removeAttr('onclick');
         $('#infoT').text('카드를 뒤집어서 정보를 확인하세요!');
     });
 
-    $('.backBtn').on('click',function(){
+    $('.backBtn').on('click',function(){    //.backBtn을 클릭하면 puzzle로 페이지 이동
         $('.flip-card-inner').css('transform','rotateY(180deg)');
         $('.backBtn').text('퍼즐 맞추기');
         $('#infoT').text(infoName+' 정보 카드');
         $('.backBtn').attr('onclick','location.href="puzzle.html"');
     });
 });
-// 전역 오류 처리 핸들러 등록
-window.onerror = function (message, source, lineno, colno, error) {
-    // 오류 정보를 alert로 표시
-    alert(`Error: ${message}\nSource: ${source}\nLine: ${lineno}, Column: ${colno}`);
-    
-    // 콘솔에도 오류 로그를 기록
-    console.error('Error caught:', {
-        message,
-        source,
-        lineno,
-        colno,
-        error,
-    });
-
-    // true를 반환하면 기본 오류 메시지를 무시
-    return false;
-};
 </script>
 </html>
