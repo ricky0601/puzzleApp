@@ -120,6 +120,7 @@
 
 .wrap_button{
     width: 80vw;
+    max-width: 344px;
 
     button{
         width: 100%;

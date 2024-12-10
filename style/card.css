@@ -68,7 +68,7 @@
         width: 244px;
         border-radius: 20px;
         margin-top: 15px;
-        margin-bottom: 20px;
+        margin-bottom: 12px;
     }
 
     h2, p{
@@ -160,7 +160,7 @@
 #wrap_card .card_info{
     max-width: 244px;
     width: 244px;
-    margin-top: 8px;
+    margin-top: 12px;
     margin-bottom: 15px;
 
     table{

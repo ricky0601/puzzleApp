@@ -146,13 +146,13 @@ $(document).ready(function() {
         $('.backBtn').text('카드 뒤집기');
         $('.backBtn').removeAttr('onclick');
         $('#infoT').text('카드를 뒤집어서 정보를 확인하세요!');
+        $('.backBtn').attr('onclick','location.href="puzzle.html"');
     });
 
     $('.backBtn').on('click',function(){    //.backBtn을 클릭하면 puzzle로 페이지 이동
         $('.flip-card-inner').css('transform','rotateY(180deg)');
         $('.backBtn').text('퍼즐 맞추기');
         $('#infoT').text(infoName+' 정보 카드');
-        $('.backBtn').attr('onclick','location.href="puzzle.html"');
     });
 });
 </script>
