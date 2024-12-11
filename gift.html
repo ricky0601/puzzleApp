@@ -22,6 +22,7 @@
             </div>
         </div>
         <div id="wrap_main">
+            <p class="con_txt"></p>
             <div class="wrap_box">
                 <img src="assets/gift_close.png" alt="" class="gift_close">
                 <img src="assets/gift_shine.png" alt="" class="gift_shine">
@@ -33,7 +34,7 @@
                 </div>
             </div>
             <div class="box_txt">
-                <span>상자를 눌러서 선물을 확인해보세요!</span>
+                <p>상자를 눌러서 선물을 확인해보세요!</p>
             </div>
         </div>
     </div>
@@ -61,9 +62,7 @@
         });
 
         $('.gift_open').click(function(){
-            $('.gift_open').css('display','none');
-            $('.wrap_reward').css('display','flex');
-            $('.wrap_reward').css('gap','20px');
+            location.href = 'reward.html';
         });
 
         $('.closeA').click(function(){  //뒤로가기 버튼

@@ -90,6 +90,7 @@ $(document).ready(function() {
         }
         if(count === 5){    //모든 퍼즐을 완성시켰을때
             $('#gift_txt').text('선물함');
+            $('.gift_button').addClass('button_anime');
             $('.gift_button').attr('onclick',('location.href="gift.html"'));
             $('#puzzle').attr('src','assets/puzzle05.png');
             $('#puzzle_title').html('퍼즐을 완성했습니다!');

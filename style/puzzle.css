@@ -153,3 +153,21 @@
         font-size: 4vw;
     }
 }
+
+.button_anime{
+    animation: zoom 2s ease-in-out infinite;
+}
+
+@keyframes zoom{
+    0%{
+        scale: 1;
+    }
+
+    50%{
+        scale: 1.2;
+    }
+
+    100%{
+        scale: 1;
+    }
+}
