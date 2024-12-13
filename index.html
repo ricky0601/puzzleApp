@@ -140,7 +140,7 @@
         }
     }
 
-    let count = localStorage.getItem('count');
+    let count = sessionStorage.getItem('count');
     if(count == null){
         count = '0';
     }
@@ -148,13 +148,13 @@
     if(count == 5){
         $('.top_sheet_text img').attr('src','assets/main_gift_open.png');
     }
-    localStorage.setItem('count',count);
+    sessionStorage.setItem('count',count);
 
-    let array = JSON.parse(localStorage.getItem('array'));
+    let array = JSON.parse(sessionStorage.getItem('array'));
     if(array == null){
         array = [];
     }
-    localStorage.setItem("array", JSON.stringify(array));
+    sessionStorage.setItem("array", JSON.stringify(array));
 
     for(let i in array){
         if(array[i] === 'lighthouse'){
@@ -172,18 +172,18 @@
 
     $('#anime_area').animate({'opacity': 1}, 800);
 
-    if(localStorage.getItem("first") === null){
+    if(sessionStorage.getItem("first") === null){
         $('.wrap_area').css('transform', 'translateX(0)');
     }else{
     }
 
     $('.slide_button').click(function(){    //버튼 클릭시 슬라이드 효과
         $('.wrap_area').css('transform', 'translateX(-50%)');
-        localStorage.setItem('first','N');
+        sessionStorage.setItem('first','N');
     });
 
     $('.light_area').click(function(){
-        localStorage.setItem('name', 'lighthouse');  // js localStorage 사용
+        sessionStorage.setItem('name', 'lighthouse');  // js sessionStorage 사용
         $('.light_area').addClass('li_selected');
         $('.museum_area').removeClass('li_selected');
         $('.oasis_area').removeClass('li_selected');
@@ -193,7 +193,7 @@
     });
 
     $('.museum_area').click(function(){
-        localStorage.setItem('name', 'museum');
+        sessionStorage.setItem('name', 'museum');
         $('.light_area').removeClass('li_selected');
         $('.museum_area').addClass('li_selected');
         $('.oasis_area').removeClass('li_selected');
@@ -203,7 +203,7 @@
     });
 
     $('.oasis_area').click(function(){
-        localStorage.setItem('name', 'oasis');
+        sessionStorage.setItem('name', 'oasis');
         $('.light_area').removeClass('li_selected');
         $('.museum_area').removeClass('li_selected');
         $('.oasis_area').addClass('li_selected');
@@ -213,7 +213,7 @@
     });
 
     $('.park_area').click(function(){
-        localStorage.setItem('name', 'park');
+        sessionStorage.setItem('name', 'park');
         $('.light_area').removeClass('li_selected');
         $('.museum_area').removeClass('li_selected');
         $('.oasis_area').removeClass('li_selected');
@@ -223,7 +223,7 @@
     });
 
     $('.tree_area').click(function(){
-        localStorage.setItem('name', 'tree');
+        sessionStorage.setItem('name', 'tree');
         $('.light_area').removeClass('li_selected');
         $('.museum_area').removeClass('li_selected');
         $('.oasis_area').removeClass('li_selected');
@@ -231,9 +231,5 @@
         $('.tree_area').addClass('li_selected');
         $('.submitButton').addClass('button_selected');
     });
-    $('.star_rating > .star').click(function() {
-        $(this).parent().children('span').removeClass('on');
-        $(this).addClass('on').prevAll('span').addClass('on');
-    })
 </script>
 </html>

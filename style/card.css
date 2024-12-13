@@ -197,3 +197,12 @@
         height: 100vh;
     }
 }
+
+@media (min-width : 1024px){
+    .flip-card{
+        width: 24vw;
+    }
+    #wrap_card .backBtn{
+        width: 24vw;
+    }
+}

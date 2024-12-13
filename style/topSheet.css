@@ -45,3 +45,13 @@
         right: -10vw;
     }
 }
+
+@media (min-width : 1024px){
+    .top_sheet_text{
+        img{
+            width: 20vw;
+            max-width: 270px;
+            right: 0;
+        }
+    }
+}

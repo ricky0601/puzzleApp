@@ -9,7 +9,7 @@
 
     #wrap_top{
         width: 100%;
-        height: 15%;
+        height: 12%;
         display: flex;
         align-items: flex-end;
         padding-bottom: 20px;
@@ -146,5 +146,14 @@
     }
     100% {
         top: 0;
+    }
+}
+
+@media (min-width : 1024px){
+    .gift_close{
+        max-width: 30vw !important;
+    }
+    .gift_open{
+        max-width: 30vw !important;
     }
 }

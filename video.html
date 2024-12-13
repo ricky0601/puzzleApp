@@ -14,7 +14,7 @@
 <body id="video_background">
   <div id="wrap_video">
     <div class="wrap_txt">
-      <span id="text_name"></span>
+      <span class="text_name"></span>
       <img src="assets/closeA.png" class="closeA" alt="">
     </div>
     <!-- <button type="button" onclick="init()">Start</button> -->
@@ -23,8 +23,8 @@
       </div>
     <div class="text_wrap">
       <p style="color: white; text-align: center; margin-top: 15px; font-size: 13px; font-weight: 400;">
-        카메라에 빨강등대를 비춰보세요.
-        <br>빨강등대가 맞다면 정보카드를 확인할 수 있습니다.
+        카메라에 <span class="text_name"></span>을(를) 비춰보세요.
+        <br><span class="text_name"></span>이(가) 맞다면 정보카드를 확인할 수 있습니다.
       </p>
     </div>
     <div id="label-container" style="display: none;"></div>
@@ -49,23 +49,23 @@
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 <script type="text/javascript">
-  let saveName = localStorage.getItem('name');
+  let saveName = sessionStorage.getItem('name');
   let URL;
   if (saveName) {
     if(saveName === 'lighthouse'){ 
-      $('#text_name').text('빨강등대');
+      $('.text_name').text('빨강등대');
       URL = "https://teachablemachine.withgoogle.com/models/GGll2ResA/";
     }else if(saveName === 'oasis'){
-      $('#text_name').text('오아시스');
+      $('.text_name').text('오아시스');
       URL = "https://teachablemachine.withgoogle.com/models/uM3GZ-FfK/";
     }else if(saveName === 'park'){
-      $('#text_name').text('공원');
+      $('.text_name').text('공원');
       URL = "https://teachablemachine.withgoogle.com/models/Sl6p4h9Yu/";
     }else if(saveName === 'museum'){
-      $('#text_name').text('박물관');
+      $('.text_name').text('박물관');
       URL = "https://teachablemachine.withgoogle.com/models/RPViucHzR/";
     }else if(saveName === 'tree'){
-      $('#text_name').text('생명의 나무');
+      $('.text_name').text('생명의 나무');
       URL = "https://teachablemachine.withgoogle.com/models/lhuIwTBUW/";
     }
     $('#text').text(saveName);
@@ -114,14 +114,19 @@
           $('#video_button').css('display','block');
           if(saveName === 'lighthouse'){ 
             $('#an_text').html('"빨강등대" 가 <br> 맞습니다!')
+            $('.img_area img').attr('src','assets/lighthouse_icon.png')
           }else if(saveName === 'oasis'){
             $('#an_text').html('"오아시스" 가 <br> 맞습니다!')
+            $('.img_area img').attr('src','assets/oasis_icon.png')
           }else if(saveName === 'park'){
             $('#an_text').html('"선사유적공원" 이 <br> 맞습니다!')
+            $('.img_area img').attr('src','assets/park_icon.png')
           }else if(saveName === 'museum'){
             $('#an_text').html('"오이도 박물관" 이 <br> 맞습니다!')
+            $('.img_area img').attr('src','assets/musuem_icon.png')
           }else if(saveName === 'tree'){
             $('#an_text').html('"생명의 나무" 가 <br> 맞습니다!')
+            $('.img_area img').attr('src','assets/tree_icon.png')
           }
         }else{
           // $('#video_button').css('display','none');

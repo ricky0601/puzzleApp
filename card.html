@@ -59,8 +59,8 @@
 </body>
 <script>
 $(document).ready(function() {
-    localStorage.setItem('post','true');    //card -> puzzle로 넘어가는 걸 확인 하기위함
-    let saveName = localStorage.getItem('name');    //localStorage 'name'에 저장된 값 가져오기
+    sessionStorage.setItem('post','true');    //card -> puzzle로 넘어가는 걸 확인 하기위함
+    let saveName = sessionStorage.getItem('name');    //sessionStorage 'name'에 저장된 값 가져오기
     let infoName;
     if (saveName) {
         if(saveName === 'lighthouse'){ 

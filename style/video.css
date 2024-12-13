@@ -20,7 +20,7 @@
     margin-top: 15px;
     height: 12%;
 
-    #text_name{
+    .text_name{
         font-size: 20px;
         color: #FFFFFF;
         width: 100%;
@@ -94,8 +94,6 @@
 }
 .img_area img{
     text-align: center;
-    margin-top: 15px;
-    margin-bottom: 20px;
 }
 
 .button_area{
@@ -135,5 +133,15 @@
 @media screen and (min-width: 375px) and (max-width: 389px){
     .bottom_img{
         bottom: -40px;
+    }
+}
+
+@media (min-width : 1024px){
+    .wrap_img{
+        display: none;
+    }
+
+    #video_background #video_button{
+        left: 0;
     }
 }
