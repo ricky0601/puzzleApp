@@ -31,6 +31,7 @@
                     <p><strong>퍼즐</strong>을 완성하고
                     <br>귀여운 <strong>선물</strong> 받아가세요! </p>
                     <button onclick="location.href='puzzle.html'">퍼즐 현황 보기</button>
+                    <img src="assets/main_gift_close.png" alt="">
                 </div>
             </div>
             <div class="wrap_wrap_title">
@@ -53,16 +54,10 @@
                                 <h3>빨강등대</h3><span>Red LightHouse</span>
                             </div>
                             <div class="landmark_place">
-                                <span>경기 시흥시 오이도로 170</span>
+                                경기 시흥시 오이도로 170
                             </div>
                             <div class="landmark_point">
-                                <div class ="star_rating">
-                                    ​<span class="star" value="1"></span>
-                                    ​​<span class="star" value="2"></span>
-                                    ​​<span class="star" value="3"></span>
-                                    ​​<span class="star" value="4"></span>
-                                    ​​<span class="star" value="5"></span>
-                                </div>
+                                서해의 아름다운 바다 풍경과 함께 산책과 사진 촬영을 즐길 수 있습니다.
                             </div>
                         </div>
                     </li>
@@ -78,13 +73,7 @@
                                 <span>경기 시흥시 정왕동 2064</span>
                             </div>
                             <div class="landmark_point">
-                                <div class ="star_rating">
-                                    ​<span class="star" value="1"></span>
-                                    ​​<span class="star" value="2"></span>
-                                    ​​<span class="star" value="3"></span>
-                                    ​​<span class="star" value="4"></span>
-                                    ​​<span class="star" value="5"></span>
-                                </div>
+                                해안길을 따라 위치한 쉼터로 서해의 낙조와 바닷바람을 만끽하며 휴식 가능합니다.
                             </div>
                         </div>
                     </li>
@@ -100,13 +89,7 @@
                                 <span>경기 시흥시 오이도로 170</span>
                             </div>
                             <div class="landmark_point">
-                                <div class ="star_rating">
-                                    ​<span class="star" value="1"></span>
-                                    ​​<span class="star" value="2"></span>
-                                    ​​<span class="star" value="3"></span>
-                                    ​​<span class="star" value="4"></span>
-                                    ​​<span class="star" value="5"></span>
-                                </div>
+                                자연과 조화를 이루는 예술적인 조형물로 생명의 소중함을 느낄 수 있습니다.
                             </div>
                         </div>
                     </li>
@@ -122,13 +105,7 @@
                                 <span>경기 시흥시 서해안로 81-30</span>
                             </div>
                             <div class="landmark_point">
-                                <div class ="star_rating">
-                                    ​<span class="star" value="1"></span>
-                                    ​​<span class="star" value="2"></span>
-                                    ​​<span class="star" value="3"></span>
-                                    ​​<span class="star" value="4"></span>
-                                    ​​<span class="star" value="5"></span>
-                                </div>
+                                선사시대의 유물을 감상하며 역사와 문화를 체험할 수 있는 교육적인 공간입니다.
                             </div>
                         </div>
                     </li>
@@ -144,6 +121,7 @@
                                 <span>경기 시흥시 오이도로 332</span>
                             </div>
                             <div class="landmark_point">
+                                선사시대부터 현대까지 오이도의 역사와 문화를 한눈에 살펴볼 수 있습니다.
                             </div>
                         </div>
                     </li>
@@ -166,6 +144,10 @@
     if(count == null){
         count = '0';
     }
+
+    if(count == 5){
+        $('.top_sheet_text img').attr('src','assets/main_gift_open.png');
+    }
     localStorage.setItem('count',count);
 
     let array = JSON.parse(localStorage.getItem('array'));
@@ -173,6 +155,20 @@
         array = [];
     }
     localStorage.setItem("array", JSON.stringify(array));
+
+    for(let i in array){
+        if(array[i] === 'lighthouse'){
+            $('.light_area').css('opacity','0.3');
+        }else if(array[i] === 'oasis'){
+            $('.oasis_area').css('opacity','0.3');
+        }else if(array[i] === 'tree'){
+            $('.tree_area').css('opacity','0.3');
+        }else if(array[i] === 'park'){
+            $('.park_area').css('opacity','0.3');
+        }else if(array[i] === 'museum'){
+            $('.museum_area').css('opacity','0.3');
+        }
+    }
 
     $('#anime_area').animate({'opacity': 1}, 800);
 

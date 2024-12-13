@@ -1,6 +1,6 @@
 #wrap_top_sheet{
     width: 100%;
-    height: 240px;
+    height: 36vh;
     background-color: #4C77FF;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
@@ -13,10 +13,16 @@
     width: 80vw;
     text-align: left;
     padding-top: 100px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     p{
         color: #FFFFFF;
         font-size: 20px;
+        z-index: 1;
+        position: relative;
     }
 
     button{
@@ -30,5 +36,12 @@
         border: 1px solid #FFFFFF;
         font-size: 17px;
         font-weight: normal;
+    }
+
+    img{
+        position: absolute;
+        max-width: 55vw;
+        top: 40px;
+        right: -10vw;
     }
 }

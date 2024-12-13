@@ -15,8 +15,10 @@
     text-align: center;
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     margin-bottom: 15px;
+    margin-top: 15px;
+    height: 12%;
 
     #text_name{
         font-size: 20px;
@@ -38,6 +40,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 100vh;
 }
 
 #videoElement{
@@ -116,12 +119,17 @@
     right: 28px;
 }
 
+.wrap_img{
+    width: 100%;
+    height: 18%;
+}
+
 .bottom_img{
-    position: absolute;
+    /* position: absolute; */
+    max-width: 373px;
     bottom: -20px;
     left: 0;
     right: 0;
-    width: 100%;
 }
 
 @media screen and (min-width: 375px) and (max-width: 389px){

@@ -174,13 +174,15 @@
 
 #right_area .text_area .landmark_place{
     text-align: left;
-    span{
-        font-size: 10px;
-    }
+    font-size: 10px;
 }
 
 #right_area .text_area .landmark_point{
+    max-width: 180px;
     text-align: left;
+    font-size: 11px;
+    color: #747474;
+    margin-top: 8px;
 }
 
 .wrap_area .slide_button{
