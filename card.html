@@ -54,7 +54,7 @@
                 </div>
             </div>
         </div>
-        <button class="backBtn">카드 뒤집기</button>
+        <button class="backBtn" onclick="txtCheck()">카드 뒤집기</button>
     </div>
 </body>
 <script>
@@ -144,17 +144,20 @@ $(document).ready(function() {
     $('.click_area').click(function(){  //.click_area를 클릭하면 카드 뒤집기
         $('.flip-card-inner').css('transform','rotateY(0deg)');
         $('.backBtn').text('카드 뒤집기');
-        $('.backBtn').removeAttr('onclick');
         $('#infoT').text('카드를 뒤집어서 정보를 확인하세요!');
-        $('.backBtn').removeAttr('onclick');
     });
 
     $('.backBtn').on('click',function(){    //.backBtn을 클릭하면 puzzle로 페이지 이동
         $('.flip-card-inner').css('transform','rotateY(180deg)');
         $('.backBtn').text('퍼즐 맞추기');
         $('#infoT').text(infoName+' 정보 카드');
-        $('.backBtn').attr('onclick','location.href="puzzle.html"');
     });
 });
+    
+function txtCheck(){
+    if($('.backBtn').text() === '퍼즐 맞추기'){
+        location.href = 'puzzle.html';
+    }
+}
 </script>
 </html>
