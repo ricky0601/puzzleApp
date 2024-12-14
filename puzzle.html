@@ -24,6 +24,11 @@
             <div class="puzzle_back">
                 <div class="puzzle_area">
                     <img id="puzzle" alt="" src="assets/puzzle00.png">
+                    <img id="puzzle_light" style="display: none;">
+                    <img id="puzzle_oasis" style="display: none;">
+                    <img id="puzzle_tree" style="display: none;">
+                    <img id="puzzle_park" style="display: none;">
+                    <img id="puzzle_museum" style="display: none;">
                 </div>
                 <div class="util_area">
                     <span id="count_text"></span>
@@ -46,9 +51,11 @@ $(document).ready(function() {
     let check = sessionStorage.getItem('post');
     let saveName = sessionStorage.getItem('name');
     let array = JSON.parse(sessionStorage.getItem("array"));
+    let pass = false;
     if(check === 'true'){
         if(array.includes(saveName)){   //card에서 넘어왔고 array에 진행중인 랜드마크가 이미 존재하면
             alert('이미 맞춘 퍼즐입니다!');
+            pass = true;
         }else{  //card에서 넘어왔고 array에 저장된 랜드마크가 없다면
             let count = Number(sessionStorage.getItem('count'))+1;
             sessionStorage.setItem('count', count+'');
@@ -59,6 +66,71 @@ $(document).ready(function() {
         console.log('index에서 바로 옴');
     }
 
+    let check_array = JSON.parse(sessionStorage.getItem("array"));
+
+    for(let i in check_array){  // 퍼즐 맞추기
+        if(check_array[i] === 'lighthouse'){
+            $('#puzzle_light').css('display','block');
+            $('#puzzle_light').attr('src','assets/puzzle01.png');
+            if(check != null){
+                if(saveName === 'lighthouse' && pass === false){
+                    $('#puzzle_light').css('scale','50');
+                    setTimeout(function(){
+                        $('#puzzle_light').css('scale','1');
+                    },500);
+                }
+            }
+        }
+        if(check_array[i] === 'oasis'){
+            $('#puzzle_oasis').css('display','block');
+            $('#puzzle_oasis').attr('src','assets/puzzle02.png');
+            if(check != null){
+                if(saveName === 'oasis' && pass === false){
+                    $('#puzzle_oasis').css('scale','50');
+                    setTimeout(function(){
+                        $('#puzzle_oasis').css('scale','1');
+                    },500);
+                }
+            }
+        }
+        if(check_array[i] === 'tree'){
+            $('#puzzle_tree').css('display','block');
+            $('#puzzle_tree').attr('src','assets/puzzle03.png');
+            if(check != null){
+                if(saveName === 'tree' && pass === false){
+                    $('#puzzle_tree').css('scale','50');
+                    setTimeout(function(){
+                        $('#puzzle_tree').css('scale','1');
+                    },500);
+                }
+            }
+        }
+        if(check_array[i] === 'park'){
+            $('#puzzle_park').css('display','block');
+            $('#puzzle_park').attr('src','assets/puzzle04.png');
+            if(check != null){
+                if(saveName === 'park' && pass === false){
+                    $('#puzzle_park').css('scale','50');
+                    setTimeout(function(){
+                        $('#puzzle_park').css('scale','1');
+                    },500);
+                }
+            }
+        }
+        if(check_array[i] === 'museum'){
+            $('#puzzle_museum').css('display','block');
+            $('#puzzle_museum').attr('src','assets/puzzle05.png');
+            if(check != null){
+                if(saveName === 'museum' && pass === false){
+                    $('#puzzle_museum').css('scale','50');
+                    setTimeout(function(){
+                        $('#puzzle_museum').css('scale','1');
+                    }, 500);
+                }
+            }
+        }
+    }
+
     sessionStorage.removeItem('post');    //post 데이터를 지움
 
     if(array.length === 0 ){
@@ -66,25 +138,22 @@ $(document).ready(function() {
         $('#puzzle_title').html('현재까지 <strong>'+0+'개</strong>의 퍼즐을 <br>맞추셨습니다!');
         $('#count_info').html('퍼즐을 완성해주세요!');
     }
+
     let count = Number(sessionStorage.getItem('count'));
-    if(count != null){
+    if(count != null){  // 맞춘 퍼즐 개수에 따른 텍스트
         if(count === 1){
-            $('#puzzle').attr('src','assets/puzzle01.png');
             $('#puzzle_title').html('현재까지 <strong>'+count+'개</strong>의 퍼즐을 <br>맞추셨습니다!');
             $('#count_info').html('무슨 사진일까요~?');
         }
         if(count === 2){
-            $('#puzzle').attr('src','assets/puzzle02.png');
             $('#puzzle_title').html('현재까지 <strong>'+count+'개</strong>의 퍼즐을 <br>맞추셨습니다!');
             $('#count_info').html('오잉 무슨 캐릭터지?');
         }
         if(count === 3){
-            $('#puzzle').attr('src','assets/puzzle03.png');
             $('#puzzle_title').html('현재까지 <strong>'+count+'개</strong>의 퍼즐을 <br>맞추셨습니다!');
             $('#count_info').html('조금만 더 힘을 내세요!!');
         }
         if(count === 4){
-            $('#puzzle').attr('src','assets/puzzle04.png');
             $('#puzzle_title').html('현재까지 <strong>'+count+'개</strong>의 퍼즐을 <br>맞추셨습니다!');
             $('#count_info').html('어라? 뭔지 알 것 같아');
         }
@@ -92,7 +161,6 @@ $(document).ready(function() {
             $('#gift_txt').text('선물함');
             $('.gift_button').addClass('button_anime');
             $('.gift_button').attr('onclick',('location.href="gift.html"'));
-            $('#puzzle').attr('src','assets/puzzle05.png');
             $('#puzzle_title').html('퍼즐을 완성했습니다!');
             $('#count_info').text('축하드립니다!');
             showFireworks();

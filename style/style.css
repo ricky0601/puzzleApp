@@ -130,7 +130,11 @@
 }
 
 #right_area li .text_area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 70%;
+    margin-left: 10px;
 }
 
 #right_area .submitButton{
@@ -158,7 +162,6 @@
 #right_area .text_area .landmark_name{
     display: flex;
     align-items: center;
-    margin-top: 22px;
     margin-bottom: 5px;
 
     h3{

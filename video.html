@@ -59,10 +59,10 @@
       $('.text_name').text('오아시스');
       URL = "https://teachablemachine.withgoogle.com/models/uM3GZ-FfK/";
     }else if(saveName === 'park'){
-      $('.text_name').text('공원');
+      $('.text_name').text('선사유적공원');
       URL = "https://teachablemachine.withgoogle.com/models/Sl6p4h9Yu/";
     }else if(saveName === 'museum'){
-      $('.text_name').text('박물관');
+      $('.text_name').text('오이도 박물관');
       URL = "https://teachablemachine.withgoogle.com/models/RPViucHzR/";
     }else if(saveName === 'tree'){
       $('.text_name').text('생명의 나무');
@@ -123,13 +123,11 @@
             $('.img_area img').attr('src','assets/park_icon.png')
           }else if(saveName === 'museum'){
             $('#an_text').html('"오이도 박물관" 이 <br> 맞습니다!')
-            $('.img_area img').attr('src','assets/musuem_icon.png')
+            $('.img_area img').attr('src','assets/museum_icon.png')
           }else if(saveName === 'tree'){
             $('#an_text').html('"생명의 나무" 가 <br> 맞습니다!')
             $('.img_area img').attr('src','assets/tree_icon.png')
           }
-        }else{
-          // $('#video_button').css('display','none');
         }
       }
     }
